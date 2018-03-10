@@ -59,5 +59,10 @@ class Team extends Model
         return $this->belongsTo(User::class, 'id_user');
     }
 
+     public function waktu()
+    {
+        return $this->hasMany(Jadwal::class, 'id_team');
+    }
+
     
 }

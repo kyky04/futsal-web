@@ -33,3 +33,5 @@ Route::resource('pemains', 'PemainController');
 Route::resource('kompetisis', 'KompetisiController');
 
 Route::resource('turnamens', 'TurnamenController');
+
+Route::resource('pertandingans', 'PertandinganController');

@@ -33,6 +33,7 @@ class Lapangan extends Model
      */
     protected $casts = [
         'nama' => 'string',
+        'alamat' => 'string',
         'latitude' => 'double',
         'longitude' => 'double'
     ];
@@ -44,6 +45,7 @@ class Lapangan extends Model
      */
     public static $rules = [
         'nama' => 'required',
+        'alamat' => 'required',
         'latitude' => 'required',
         'longitude' => 'required'
     ];
@@ -52,6 +54,5 @@ class Lapangan extends Model
     {
         return $this->hasMany('App\Models\Team','id_lapang');
     }
-
     
 }

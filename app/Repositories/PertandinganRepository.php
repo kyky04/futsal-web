@@ -2,19 +2,18 @@
 
 namespace App\Repositories;
 
-use App\Models\Lapangan;
+use App\Models\Pertandingan;
 use InfyOm\Generator\Common\BaseRepository;
 
-class LapanganRepository extends BaseRepository
+class PertandinganRepository extends BaseRepository
 {
     /**
      * @var array
      */
     protected $fieldSearchable = [
-        'nama',
-        'alamat',
-        'latitude',
-        'longitude'
+        'id_team_home',
+        'id_team_away',
+        'status'
     ];
 
     /**
@@ -22,6 +21,6 @@ class LapanganRepository extends BaseRepository
      **/
     public function model()
     {
-        return Lapangan::class;
+        return Pertandingan::class;
     }
 }

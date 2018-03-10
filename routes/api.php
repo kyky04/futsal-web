@@ -22,6 +22,7 @@ Route::resource('lapangan', 'LapanganAPIController');
 
 Route::resource('team', 'TeamAPIController');
 Route::post('teams', 'TeamAPIController@store');
+Route::get('teams-lapang/{id_lapang}', 'TeamAPIController@getByLapang');
 Route::get('myteam/{id_user}', 'TeamAPIController@myteam');
 
 Route::resource('jadwal', 'JadwalAPIController');
@@ -33,3 +34,5 @@ Route::get('pemain-team/{id_team}', 'PemainAPIController@showByTeam');
 Route::resource('kompetisi', 'KompetisiAPIController');
 
 Route::resource('turnamen', 'TurnamenAPIController');
+
+Route::resource('pertandingans', 'PertandinganAPIController');

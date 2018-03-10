@@ -14,11 +14,11 @@
     <a href="{!! route('pemains.index') !!}"><i class="fa fa-soccer-ball-o "></i><span>Pemains</span></a>
 </li>
 
-<li class="{{ Request::is('kompetisis*') ? 'active' : '' }}">
-    <a href="{!! route('kompetisis.index') !!}"><i class="fa fa-diamond"></i><span>Kompetisis</span></a>
-</li>
-
 <li class="{{ Request::is('turnamens*') ? 'active' : '' }}">
     <a href="{!! route('turnamens.index') !!}"><i class="fa fa-edit"></i><span>Turnamens</span></a>
+</li>
+
+<li class="{{ Request::is('pertandingans*') ? 'active' : '' }}">
+    <a href="{!! route('pertandingans.index') !!}"><i class="fa fa-edit"></i><span>Pertandingans</span></a>
 </li>
 

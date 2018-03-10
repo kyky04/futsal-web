@@ -80,6 +80,18 @@ class TeamAPIController extends AppBaseController
         return $this->sendResponse($team->toArray(), 'Team retrieved successfully');
     }
 
+    public function getByLapang($id_lapang)
+    {
+        /** @var Team $team */
+        $team = Team::where('id_lapang',$id_lapang)->with('lapang','waktu')->get();
+
+        if (empty($team)) {
+            return $this->sendError('Team not found');
+        }
+
+        return $this->sendResponse($team->toArray(), 'Team retrieved successfully');
+    }
+
     /**
      * Update the specified Team in storage.
      * PUT/PATCH /teams/{id}
