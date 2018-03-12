@@ -64,5 +64,10 @@ class Team extends Model
         return $this->hasMany(Jadwal::class, 'id_team');
     }
 
+    public function jadwal()
+    {
+        return $this->hasOne(Jadwal::class, 'id_team');
+    }
+
     
 }

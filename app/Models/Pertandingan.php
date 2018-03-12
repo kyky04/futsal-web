@@ -55,7 +55,7 @@ class Pertandingan extends Model
 
     public function teamAway()
     {
-        return $this->belongsTo(Team::class,'id_team_away');
+        return $this->belongsTo(Team::class,'id_team_away')->with('lapang')->with('jadwal');
     }
 
       public function lapang()

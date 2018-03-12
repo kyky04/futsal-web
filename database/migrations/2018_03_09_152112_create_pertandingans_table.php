@@ -20,7 +20,7 @@ class CreatePertandingansTable extends Migration
             $table->string('status');
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('id_team_home')->references('id')->on('teams');
+           $table->foreign('id_team_home')->references('id')->on('teams');
             $table->foreign('id_team_away')->references('id')->on('teams');
         });
     }

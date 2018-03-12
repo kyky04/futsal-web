@@ -71,13 +71,19 @@ class PertandinganAPIController extends AppBaseController
     public function show($id)
     {
         /** @var Pertandingan $pertandingan */
-        $pertandingan = $this->pertandinganRepository->findWithoutFail($id);
+        $this->pertandinganRepository->pushCriteria(new RequestCriteria($request));
+        $this->pertandinganRepository->pushCriteria(new LimitOffsetCriteria($request));
+        $pertandingans = $this->pertandinganRepository->with('teamHome')->with('teamAway')->all();
 
-        if (empty($pertandingan)) {
-            return $this->sendError('Pertandingan not found');
-        }
+        return $this->sendResponse($pertandingans->toArray(), 'Pertandingans retrieved successfully');
+    }
 
-        return $this->sendResponse($pertandingan->toArray(), 'Pertandingan retrieved successfully');
+    public function pertandingan($id)
+    {
+        /** @var Pertandingan $pertandingan */
+        $pertandingans = Pertandingan::with('teamHome')->with('teamAway')->where('id_team_home',$id)->orWhere('id_team_away',$id)->get();
+
+        return $this->sendResponse($pertandingans->toArray(), 'Pertandingans retrieved successfully');
     }
 
     /**

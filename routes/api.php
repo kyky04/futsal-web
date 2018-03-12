@@ -41,4 +41,5 @@ Route::resource('kompetisi', 'KompetisiAPIController');
 
 Route::resource('turnamen', 'TurnamenAPIController');
 
-Route::resource('pertandingans', 'PertandinganAPIController');
+Route::resource('pertandingan', 'PertandinganAPIController');
+Route::get('versus/{id_team}', 'PertandinganAPIController@pertandingan');
